@@ -7,7 +7,7 @@
         Application: ['GetProperties', 'Quit', 'SetMute', 'SetVolume'],
         AudioLibrary: ['Clean', 'Export', 'GetAlbumDetails', 'GetAlbums', 'GetArtistDetails', 'GetArtists', 'GetGenres', 'GetRecentlyAddedAlbums', 'GetRecentlyAddedSongs', 'GetRecentlyPlayedAlbums', 'GetRecentlyPlayedSongs', 'GetSongDetails', 'GetSongs', 'Scan', 'SetAlbumDetails', 'SetArtistDetails', 'SetSongDetails'],
         Files: ['Download', 'GetDirectory', 'GetFileDetails', 'GetSources', 'PrepareDownload'],
-        GUI: ['ActivateWindow', 'GetProperties', 'SetFullscreen', 'howNotification'],
+        GUI: ['ActivateWindow', 'GetProperties', 'SetFullscreen', 'ShowNotification'],
         Input: ['Back', 'ContextMenu', 'Down', 'ExecuteAction', 'Home', 'Info', 'Left', 'Right', 'Select', 'SendText', 'ShowCodec', 'ShowOSD', 'Up'],
         Player: ['GetActivePlayers', 'GetItem', 'GetProperties', 'GoTo', 'Move', 'Open', 'PlayPause', 'Rotate', 'Seek', 'SetAudioStream', 'SetPartymode', 'SetRepeat', 'SetShuffle', 'SetSpeed', 'SetSubtitle', 'Stop', 'Zoom'],
         Playlist: ['Add', 'Clear', 'GetItems', 'GetPlaylists', 'GetProperties', 'Insert', 'Remove', 'Swap'],

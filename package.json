@@ -1,6 +1,6 @@
 {
   "name": "simple-xbmc",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "The module uses XBMC JSON-RPC Api V6 to provide a complete and simple API to allow communication with XMBC/Kodi instances using a TCP socket connection",
   "main": "index.js",
   "scripts": {
