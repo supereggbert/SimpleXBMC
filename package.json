@@ -1,0 +1,23 @@
+{
+  "name": "SimpleXBMC",
+  "version": "0.9.0",
+  "description": "Module for xmbc/kodi json rpc api over tcp connection including notification",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/supereggbert/SimpleXBMC.git"
+  },
+  "keywords": [
+    "kodi",
+    "xbmc"
+  ],
+  "author": "Paul Brunt <me@paulbrunt.co.uk> (http://www.paulbrunt.co.uk)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/supereggbert/SimpleXBMC/issues"
+  },
+  "homepage": "https://github.com/supereggbert/SimpleXBMC"
+}
