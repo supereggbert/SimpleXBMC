@@ -62,6 +62,9 @@
         client.on('data', this.onData.bind(this));
         client.on('close', this.onClose.bind(this));
     };
+    SimpleXBMC.prototype.close = function() {
+        this.client.destroy();
+    };
     SimpleXBMC.prototype.onData = function(buffer) {
         var str = this.buffer + buffer.toString();
         var newBuffer = str[0];
