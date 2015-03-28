@@ -30,7 +30,7 @@
             this[methodName] = this.generateMethod(name + '.' + methods[len]).bind(this);
         }
     };
-    XBMCInterface.prototype = new events.EventEmitter();
+    XBMCInterface.prototype.__proto__ = events.EventEmitter.prototype;
     XBMCInterface.prototype.generateMethod = function(method) {
         return function(params, fn) {
             this.api.send(method, params, fn);
@@ -53,7 +53,7 @@
             this[name] = new XBMCInterface(this, i, XBMCMethods[i]);
         }
     };
-    SimpleXBMC.prototype = new events.EventEmitter();
+    SimpleXBMC.prototype.__proto__ = events.EventEmitter.prototype;
     SimpleXBMC.prototype.connect = function(host, port) {
         if (port == null) port = 9090;
         var client = this.client;
