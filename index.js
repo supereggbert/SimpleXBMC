@@ -1,6 +1,7 @@
 (function() {
-    var net = require('net'), events = require('events');
-    
+    var net = require('net'),
+        events = require('events');
+
     var XBMCMethods = {
         Addons: ['ExecuteAddon', 'GetAddonDetails', 'GetAddons', 'SetAddonEnabled'],
         Application: ['GetProperties', 'Quit', 'SetMute', 'SetVolume'],
@@ -32,7 +33,6 @@
     XBMCInterface.prototype = new events.EventEmitter();
     XBMCInterface.prototype.generateMethod = function(method) {
         return function(params, fn) {
-            console.log(params);
             this.api.send(method, params, fn);
         };
     };
@@ -45,6 +45,7 @@
         this.connected = false;
         this.defer = [];
         this.fn = {};
+        this.buffer = '';
         this.id = 0;
         for (i in XBMCMethods) {
             var name = i[0].toLowerCase() + i.substr(1);
@@ -62,7 +63,25 @@
         client.on('close', this.onClose.bind(this));
     };
     SimpleXBMC.prototype.onData = function(buffer) {
-        var json = JSON.parse(buffer.toString());
+        var str = this.buffer + buffer.toString();
+        var newBuffer = str[0];
+        var brackets = 1;
+        for (var i = 1; i < str.length; i++) {
+            var chr = str[i];
+            newBuffer += chr;
+            if (chr == '{') {
+                brackets++;
+            } else if (chr == '}') {
+                brackets--;
+            }
+            if (brackets == 0) {
+                this.processJSON(JSON.parse(newBuffer));
+                newBuffer = ''
+            }
+        }
+        this.buffer = newBuffer;
+    };
+    SimpleXBMC.prototype.processJSON = function(json) {
         if (json.id) {
             if (this.fn[json.id]) {
                 this.fn[json.id](json.result);
@@ -88,7 +107,7 @@
     SimpleXBMC.prototype.onConnected = function(data) {
         this.connected = true;
         this.processDefered();
-        console.log('Connected');
+        this.emit('Connected', data);
     };
     SimpleXBMC.prototype.processDefered = function() {
         var defer = this.defer;
