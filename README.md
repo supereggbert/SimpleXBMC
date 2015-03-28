@@ -4,7 +4,7 @@ Kodi/XBMC JSON RPC node interface
 ![NPM Badge](https://nodei.co/npm/simple-xbmc.png?downloads=true&stars=true "NPM Badge")
 
 # SimpleXBMC
-The module uses [XBMC JSON-RPC Api V6](http://wiki.xbmc.org/index.php?title=JSON-RPC_API/v6) to provide a complete and simple API to allow communicate with XMBC/Kodi instances using a TCP socket connection
+The module uses [XBMC JSON-RPC Api V6](http://wiki.xbmc.org/index.php?title=JSON-RPC_API/v6) to provide a complete and simple API to allow communication with XMBC/Kodi instances using a TCP socket connection
 
 Examples
 --------

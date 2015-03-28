@@ -1,7 +1,7 @@
 {
   "name": "simple-xbmc",
   "version": "0.9.1",
-  "description": "The module uses XBMC JSON-RPC Api V6 to provide a complete and simple API to allow communicate with XMBC/Kodi instances using a TCP socket connection",
+  "description": "The module uses XBMC JSON-RPC Api V6 to provide a complete and simple API to allow communication with XMBC/Kodi instances using a TCP socket connection",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
