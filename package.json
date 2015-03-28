@@ -1,5 +1,5 @@
 {
-  "name": "SimpleXBMC",
+  "name": "simple-xbmc",
   "version": "0.9.0",
   "description": "Module for xmbc/kodi json rpc api over tcp connection including notification",
   "main": "index.js",
